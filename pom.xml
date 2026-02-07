@@ -23,7 +23,6 @@
         <configuration>
           <archive>
             <manifest>
-              <!-- Use the fully qualified class name -->
               <mainClass>com.munikumar.Calculator</mainClass>
             </manifest>
           </archive>
