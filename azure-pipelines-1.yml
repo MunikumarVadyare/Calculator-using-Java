@@ -1,17 +1,17 @@
-trigger:
-- main
+  trigger:
+  - main
 
-pool:
-  vmImage: ubuntu-latest
+  pool:
+    vmImage: ubuntu-latest
 
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'package'
+  steps:
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'package'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/target/*.jar'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.SourcesDirectory)/**/target/*.jar'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
